@@ -24,7 +24,7 @@ public class Method1 {
 
     /**
      * Method to calculate the area of circle
-     * @return the area of the rectangle in double
+     * @return the area of the circle in double
      * @param radius the radius value of the circle
      * */
     public static double areaOfCircle(double radius){
