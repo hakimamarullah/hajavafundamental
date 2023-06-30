@@ -36,24 +36,26 @@ public class FungsiRandom {
     public static List<String> emailRandomizer(int beginChar, int endChar, String[] providers, String[] domains, int n) {
         var results = new ArrayList<String>();
         var random = new Random();
-        StringBuilder sb = new StringBuilder();
+        var stringBuilder = new StringBuilder();
+
+
         for(int i=0; i<n; i++){
-            sb.setLength(0);
-            int length = random.nextInt(8, 21);
-            int providerIndex = random.nextInt(0, providers.length);
-            int domainIndex = random.nextInt(0, domains.length);
+            stringBuilder.setLength(0);
+            var length = random.nextInt(8, 21);
+            var providerIndex = random.nextInt(0, providers.length);
+            var domainIndex = random.nextInt(0, domains.length);
 
             //Generate random username
             for(int j=0; j<length; j++){
-                char tmp = (char) random.nextInt(beginChar, endChar);
-                sb.append(tmp);
+                var tmp = (char) random.nextInt(beginChar, endChar);
+                stringBuilder.append(tmp);
             }
-            sb.append("@");
-            sb.append(providers[providerIndex]);
-            sb.append(domains[domainIndex]);
-            results.add(sb.toString());
-        }
 
+            stringBuilder.append("@");
+            stringBuilder.append(providers[providerIndex]);
+            stringBuilder.append(domains[domainIndex]);
+            results.add(stringBuilder.toString());
+        }
         return results;
     }
 }
